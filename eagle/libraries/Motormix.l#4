@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle version="9.6.2">
+<drawing>
+<settings>
+<setting alwaysvectorfont="no"/>
+<setting verticaltext="up"/>
+</settings>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<layers>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="2" name="Route2" color="16" fill="1" visible="no" active="yes"/>
+<layer number="3" name="Route3" color="17" fill="1" visible="no" active="yes"/>
+<layer number="4" name="Route4" color="18" fill="1" visible="no" active="yes"/>
+<layer number="5" name="Route5" color="19" fill="1" visible="no" active="yes"/>
+<layer number="6" name="Route6" color="25" fill="1" visible="no" active="yes"/>
+<layer number="7" name="Route7" color="26" fill="1" visible="no" active="yes"/>
+<layer number="8" name="Route8" color="27" fill="1" visible="no" active="yes"/>
+<layer number="9" name="Route9" color="28" fill="1" visible="no" active="yes"/>
+<layer number="10" name="Route10" color="29" fill="1" visible="no" active="yes"/>
+<layer number="11" name="Route11" color="30" fill="1" visible="no" active="yes"/>
+<layer number="12" name="Route12" color="20" fill="1" visible="no" active="yes"/>
+<layer number="13" name="Route13" color="21" fill="1" visible="no" active="yes"/>
+<layer number="14" name="Route14" color="22" fill="1" visible="no" active="yes"/>
+<layer number="15" name="Route15" color="23" fill="1" visible="no" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
+<layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
+<layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
+<layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
+<layer number="35" name="tGlue" color="7" fill="4" visible="no" active="yes"/>
+<layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
+<layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
+<layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="88" name="SimResults" color="9" fill="1" visible="yes" active="yes"/>
+<layer number="89" name="SimProbes" color="9" fill="1" visible="yes" active="yes"/>
+<layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
+<layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="93" name="Pins" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="94" name="Symbols" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
+</layers>
+<library>
+<packages>
+</packages>
+<symbols>
+<symbol name="MOTORISED_FADER">
+<wire x1="-38.1" y1="7.62" x2="-38.1" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-38.1" y1="-7.62" x2="35.56" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="35.56" y1="-7.62" x2="35.56" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="35.56" y1="-5.08" x2="35.56" y2="5.08" width="0.254" layer="94"/>
+<wire x1="35.56" y1="5.08" x2="35.56" y2="7.62" width="0.254" layer="94"/>
+<wire x1="35.56" y1="7.62" x2="-38.1" y2="7.62" width="0.254" layer="94"/>
+<wire x1="15.24" y1="5.08" x2="15.24" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="15.24" y1="-5.08" x2="35.56" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="15.24" y1="5.08" x2="35.56" y2="5.08" width="0.254" layer="94"/>
+<pin name="P1" x="-43.18" y="5.08" length="middle"/>
+<pin name="P2" x="-43.18" y="0" length="middle"/>
+<pin name="P3" x="-43.18" y="-5.08" length="middle"/>
+<pin name="M1" x="40.64" y="2.54" length="middle" rot="R180"/>
+<pin name="M2" x="40.64" y="-2.54" length="middle" rot="R180"/>
+<pin name="NC2" x="-27.94" y="12.7" length="middle" rot="R270"/>
+<pin name="NC" x="-27.94" y="-12.7" length="middle" rot="R90"/>
+</symbol>
+<symbol name="BA6286">
+<wire x1="-27.94" y1="15.24" x2="-27.94" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-27.94" y1="-5.08" x2="27.94" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="27.94" y1="-5.08" x2="27.94" y2="15.24" width="0.254" layer="94"/>
+<wire x1="27.94" y1="15.24" x2="-27.94" y2="15.24" width="0.254" layer="94"/>
+<pin name="GND" x="-22.86" y="-7.62" visible="pin" length="middle" rot="R90"/>
+<pin name="R_IN" x="-17.78" y="-7.62" visible="pin" length="middle" rot="R90"/>
+<pin name="V_REF" x="-12.7" y="-7.62" visible="pin" length="middle" rot="R90"/>
+<pin name="OUT2" x="-7.62" y="-7.62" visible="pin" length="middle" rot="R90"/>
+<pin name="RNF" x="-2.54" y="-7.62" visible="pin" length="middle" rot="R90"/>
+<pin name="GND2" x="2.54" y="-7.62" visible="pin" length="middle" rot="R90"/>
+<pin name="OUT1" x="7.62" y="-7.62" visible="pin" length="middle" rot="R90"/>
+<pin name="V_MOTOR" x="12.7" y="-7.62" visible="pin" length="middle" rot="R90"/>
+<pin name="VCC" x="17.78" y="-7.62" visible="pin" length="middle" rot="R90"/>
+<pin name="F_IN" x="22.86" y="-7.62" visible="pin" length="middle" rot="R90"/>
+<text x="-4.572" y="10.16" size="1.778" layer="94">BA6286</text>
+</symbol>
+<symbol name="MM74HC02N">
+<wire x1="-20.574" y1="11.43" x2="-20.574" y2="-11.43" width="0.254" layer="94"/>
+<wire x1="-20.574" y1="-11.43" x2="20.066" y2="-11.43" width="0.254" layer="94"/>
+<wire x1="20.066" y1="-11.43" x2="20.066" y2="11.43" width="0.254" layer="94"/>
+<wire x1="20.066" y1="11.43" x2="-20.574" y2="11.43" width="0.254" layer="94"/>
+<pin name="Y1" x="-15.494" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="A1" x="-10.414" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="B1" x="-5.334" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="Y2" x="-0.254" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="A2" x="4.826" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="B2" x="9.906" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="GND" x="14.986" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="VCC" x="-15.494" y="16.51" visible="pin" length="middle" rot="R270"/>
+<pin name="Y4" x="-10.414" y="16.51" visible="pin" length="middle" rot="R270"/>
+<pin name="B4" x="-5.334" y="16.51" visible="pin" length="middle" rot="R270"/>
+<pin name="A4" x="-0.254" y="16.51" visible="pin" length="middle" rot="R270"/>
+<pin name="Y3" x="4.826" y="16.51" visible="pin" length="middle" rot="R270"/>
+<pin name="B3" x="9.906" y="16.51" visible="pin" length="middle" rot="R270"/>
+<pin name="A3" x="14.986" y="16.51" visible="pin" length="middle" rot="R270"/>
+<circle x="-18.034" y="0" radius="0.915809375" width="0.254" layer="94"/>
+<text x="-7.112" y="-1.016" size="1.778" layer="94">MM74HC02N</text>
+</symbol>
+<symbol name="74HC595AP">
+<wire x1="-20.574" y1="11.43" x2="-20.574" y2="-11.43" width="0.254" layer="94"/>
+<wire x1="-20.574" y1="-11.43" x2="25.146" y2="-11.43" width="0.254" layer="94"/>
+<wire x1="25.146" y1="-11.43" x2="25.146" y2="11.43" width="0.254" layer="94"/>
+<wire x1="25.146" y1="11.43" x2="-20.574" y2="11.43" width="0.254" layer="94"/>
+<pin name="QB" x="-15.494" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="QC" x="-10.414" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="QD" x="-5.334" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="QE" x="-0.254" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="QF" x="4.826" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="QG" x="9.906" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="QH" x="14.986" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="GND" x="20.066" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="VCC" x="-15.494" y="16.51" visible="pin" length="middle" rot="R270"/>
+<pin name="QA" x="-10.414" y="16.51" visible="pin" length="middle" rot="R270"/>
+<pin name="SI" x="-5.334" y="16.51" visible="pin" length="middle" rot="R270"/>
+<pin name="G" x="-0.254" y="16.51" visible="pin" length="middle" rot="R270"/>
+<pin name="RCK" x="4.826" y="16.51" visible="pin" length="middle" rot="R270"/>
+<pin name="SCK" x="9.906" y="16.51" visible="pin" length="middle" rot="R270"/>
+<circle x="-18.034" y="0" radius="0.915809375" width="0.254" layer="94"/>
+<text x="-4.318" y="-0.762" size="1.778" layer="94">74HC595AP</text>
+<pin name="SCLR" x="14.986" y="16.51" visible="pin" length="middle" rot="R270"/>
+<pin name="QH'" x="20.066" y="16.51" visible="pin" length="middle" rot="R270"/>
+</symbol>
+<symbol name="LM311P">
+<wire x1="-20.574" y1="16.51" x2="-20.574" y2="-16.51" width="0.254" layer="94"/>
+<wire x1="-20.574" y1="-16.51" x2="4.826" y2="-16.51" width="0.254" layer="94"/>
+<wire x1="4.826" y1="-16.51" x2="4.826" y2="16.51" width="0.254" layer="94"/>
+<wire x1="4.826" y1="16.51" x2="-20.574" y2="16.51" width="0.254" layer="94"/>
+<pin name="EMIT_OUT" x="-15.494" y="-21.59" visible="pin" length="middle" rot="R90"/>
+<pin name="IN+" x="-10.414" y="-21.59" visible="pin" length="middle" rot="R90"/>
+<pin name="IN-" x="-5.334" y="-21.59" visible="pin" length="middle" rot="R90"/>
+<pin name="VCC-" x="-0.254" y="-21.59" visible="pin" length="middle" rot="R90"/>
+<circle x="-18.034" y="0" radius="0.915809375" width="0.254" layer="94"/>
+<text x="-11.684" y="-0.762" size="1.778" layer="94">LM311P</text>
+<pin name="VCC+" x="-15.494" y="21.59" length="middle" rot="R270"/>
+<pin name="COL_OUT" x="-10.414" y="21.59" length="middle" rot="R270"/>
+<pin name="BAL_STRB" x="-5.334" y="21.59" length="middle" rot="R270"/>
+<pin name="BALANCE" x="-0.254" y="21.59" length="middle" rot="R270"/>
+</symbol>
+<symbol name="4562D">
+<wire x1="-20.574" y1="11.43" x2="-20.574" y2="-11.43" width="0.254" layer="94"/>
+<wire x1="-20.574" y1="-11.43" x2="4.826" y2="-11.43" width="0.254" layer="94"/>
+<wire x1="4.826" y1="-11.43" x2="4.826" y2="11.43" width="0.254" layer="94"/>
+<wire x1="4.826" y1="11.43" x2="-20.574" y2="11.43" width="0.254" layer="94"/>
+<pin name="P$1" x="-15.494" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="P$2" x="-10.414" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="P$3" x="-5.334" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="P$4" x="-0.254" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<circle x="-18.034" y="0" radius="0.915809375" width="0.254" layer="94"/>
+<text x="-10.922" y="-0.762" size="1.778" layer="94">4562D</text>
+<pin name="P$5" x="-15.494" y="16.51" length="middle" rot="R270"/>
+<pin name="P$6" x="-10.414" y="16.51" length="middle" rot="R270"/>
+<pin name="P$7" x="-5.334" y="16.51" length="middle" rot="R270"/>
+<pin name="P$8" x="-0.254" y="16.51" length="middle" rot="R270"/>
+</symbol>
+<symbol name="AD8801">
+<wire x1="-20.574" y1="11.43" x2="-20.574" y2="-11.43" width="0.254" layer="94"/>
+<wire x1="-20.574" y1="-11.43" x2="25.146" y2="-11.43" width="0.254" layer="94"/>
+<wire x1="25.146" y1="-11.43" x2="25.146" y2="11.43" width="0.254" layer="94"/>
+<wire x1="25.146" y1="11.43" x2="-20.574" y2="11.43" width="0.254" layer="94"/>
+<pin name="V_REFH" x="-15.494" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="Q1" x="-10.414" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="Q2" x="-5.334" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="Q3" x="-0.254" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="Q4" x="4.826" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="SHDN" x="9.906" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="CS" x="14.986" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="GND" x="20.066" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="VDD" x="-15.494" y="16.51" visible="pin" length="middle" rot="R270"/>
+<pin name="RS" x="-10.414" y="16.51" visible="pin" length="middle" rot="R270"/>
+<pin name="O8" x="-5.334" y="16.51" visible="pin" length="middle" rot="R270"/>
+<pin name="O7" x="-0.254" y="16.51" visible="pin" length="middle" rot="R270"/>
+<pin name="O6" x="4.826" y="16.51" visible="pin" length="middle" rot="R270"/>
+<pin name="O5" x="9.906" y="16.51" visible="pin" length="middle" rot="R270"/>
+<circle x="-18.034" y="0" radius="0.915809375" width="0.254" layer="94"/>
+<text x="-2.032" y="-1.016" size="1.778" layer="94">AD8801</text>
+<pin name="SDI" x="14.986" y="16.51" visible="pin" length="middle" rot="R270"/>
+<pin name="CLK" x="20.066" y="16.51" visible="pin" length="middle" rot="R270"/>
+</symbol>
+<symbol name="74HCT4051N">
+<wire x1="-20.574" y1="11.43" x2="-20.574" y2="-11.43" width="0.254" layer="94"/>
+<wire x1="-20.574" y1="-11.43" x2="25.146" y2="-11.43" width="0.254" layer="94"/>
+<wire x1="25.146" y1="-11.43" x2="25.146" y2="11.43" width="0.254" layer="94"/>
+<wire x1="25.146" y1="11.43" x2="-20.574" y2="11.43" width="0.254" layer="94"/>
+<pin name="Y4" x="-15.494" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="Y6" x="-10.414" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="Z/COM_IO" x="-5.334" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="Y7" x="-0.254" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="Y5" x="4.826" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="ENBL" x="9.906" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="VEE" x="14.986" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="GND" x="20.066" y="-16.51" visible="pin" length="middle" rot="R90"/>
+<pin name="VCC" x="-15.494" y="16.51" visible="pin" length="middle" rot="R270"/>
+<pin name="Y2" x="-10.414" y="16.51" visible="pin" length="middle" rot="R270"/>
+<pin name="Y1" x="-5.334" y="16.51" visible="pin" length="middle" rot="R270"/>
+<pin name="Y0" x="-0.254" y="16.51" visible="pin" length="middle" rot="R270"/>
+<pin name="Y3" x="4.826" y="16.51" visible="pin" length="middle" rot="R270"/>
+<pin name="S0" x="9.906" y="16.51" visible="pin" length="middle" rot="R270"/>
+<circle x="-18.034" y="0" radius="0.915809375" width="0.254" layer="94"/>
+<text x="-1.778" y="-0.762" size="1.778" layer="94">74HCT4051N</text>
+<pin name="S1" x="14.986" y="16.51" visible="pin" length="middle" rot="R270"/>
+<pin name="S2" x="20.066" y="16.51" visible="pin" length="middle" rot="R270"/>
+</symbol>
+<symbol name="26_PIN_IDC">
+<wire x1="-35.56" y1="12.7" x2="35.56" y2="12.7" width="0.254" layer="94"/>
+<wire x1="35.56" y1="12.7" x2="35.56" y2="-12.7" width="0.254" layer="94"/>
+<wire x1="35.56" y1="-12.7" x2="-35.56" y2="-12.7" width="0.254" layer="94"/>
+<wire x1="-35.56" y1="-12.7" x2="-35.56" y2="12.7" width="0.254" layer="94"/>
+<pin name="GND2" x="-30.48" y="-17.78" length="middle" rot="R90"/>
+<pin name="VCC" x="-25.4" y="-17.78" length="middle" rot="R90"/>
+<pin name="P$3" x="-20.32" y="-17.78" length="middle" rot="R90"/>
+<pin name="P$4" x="-15.24" y="-17.78" length="middle" rot="R90"/>
+<pin name="P$5" x="-10.16" y="-17.78" length="middle" rot="R90"/>
+<pin name="P$6" x="-5.08" y="-17.78" length="middle" rot="R90"/>
+<pin name="P$7" x="0" y="-17.78" length="middle" rot="R90"/>
+<pin name="P$8" x="5.08" y="-17.78" length="middle" rot="R90"/>
+<pin name="P$9" x="10.16" y="-17.78" length="middle" rot="R90"/>
+<pin name="RCK" x="15.24" y="-17.78" length="middle" rot="R90"/>
+<pin name="P$11" x="20.32" y="-17.78" length="middle" rot="R90"/>
+<pin name="SER_OUT" x="25.4" y="-17.78" length="middle" rot="R90"/>
+<pin name="CLK" x="30.48" y="-17.78" length="middle" rot="R90"/>
+<pin name="P$14" x="-30.48" y="17.78" length="middle" rot="R270"/>
+<pin name="P$15" x="-25.4" y="17.78" length="middle" rot="R270"/>
+<pin name="P$16" x="-20.32" y="17.78" length="middle" rot="R270"/>
+<pin name="P$17" x="-15.24" y="17.78" length="middle" rot="R270"/>
+<pin name="P$18" x="-10.16" y="17.78" length="middle" rot="R270"/>
+<pin name="P$19" x="-5.08" y="17.78" length="middle" rot="R270"/>
+<pin name="P$20" x="0" y="17.78" length="middle" rot="R270"/>
+<pin name="P$21" x="5.08" y="17.78" length="middle" rot="R270"/>
+<pin name="P$22" x="10.16" y="17.78" length="middle" rot="R270"/>
+<pin name="P$23" x="15.24" y="17.78" length="middle" rot="R270"/>
+<pin name="P$24" x="20.32" y="17.78" length="middle" rot="R270"/>
+<pin name="P$25" x="25.4" y="17.78" length="middle" rot="R270"/>
+<pin name="P$26" x="30.48" y="17.78" length="middle" rot="R270"/>
+<text x="-12.446" y="-0.762" size="1.778" layer="94">26-pin IDC Connector</text>
+</symbol>
+<symbol name="MC7808C">
+<pin name="P$1" x="-5.08" y="-5.08" length="middle" rot="R90"/>
+<pin name="P$2" x="0" y="-5.08" length="middle" rot="R90"/>
+<pin name="P$3" x="5.08" y="-5.08" length="middle" rot="R90"/>
+<text x="-5.334" y="10.16" size="1.778" layer="94">MC7808C</text>
+<wire x1="-10.16" y1="0" x2="10.16" y2="0" width="0.254" layer="94"/>
+<wire x1="10.16" y1="0" x2="10.16" y2="15.24" width="0.254" layer="94"/>
+<wire x1="10.16" y1="15.24" x2="-10.16" y2="15.24" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="15.24" x2="-10.16" y2="0" width="0.254" layer="94"/>
+</symbol>
+<symbol name="TL072BCP">
+<wire x1="-20.574" y1="16.51" x2="-20.574" y2="-16.51" width="0.254" layer="94"/>
+<wire x1="-20.574" y1="-16.51" x2="4.826" y2="-16.51" width="0.254" layer="94"/>
+<wire x1="4.826" y1="-16.51" x2="4.826" y2="16.51" width="0.254" layer="94"/>
+<wire x1="4.826" y1="16.51" x2="-20.574" y2="16.51" width="0.254" layer="94"/>
+<pin name="P1" x="-15.494" y="-21.59" visible="pin" length="middle" rot="R90"/>
+<pin name="P2" x="-10.414" y="-21.59" visible="pin" length="middle" rot="R90"/>
+<pin name="P3" x="-5.334" y="-21.59" visible="pin" length="middle" rot="R90"/>
+<pin name="P4" x="-0.254" y="-21.59" visible="pin" length="middle" rot="R90"/>
+<circle x="-18.034" y="0" radius="0.915809375" width="0.254" layer="94"/>
+<text x="-11.684" y="-0.762" size="1.778" layer="94">TL072BCP</text>
+<pin name="P8" x="-15.494" y="21.59" length="middle" rot="R270"/>
+<pin name="P7" x="-10.414" y="21.59" length="middle" rot="R270"/>
+<pin name="P6" x="-5.334" y="21.59" length="middle" rot="R270"/>
+<pin name="P5" x="-0.254" y="21.59" length="middle" rot="R270"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="26_PIN_IDC">
+<gates>
+<gate name="G$1" symbol="26_PIN_IDC" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name="">
+<attribute name="_EXTERNAL_" value="_EXTERNAL_" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="74HC595AP">
+<gates>
+<gate name="G$1" symbol="74HC595AP" x="-2.54" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name="">
+<attribute name="_EXTERNAL_" value="_EXTERNAL_" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="74HCT4051N">
+<gates>
+<gate name="G$1" symbol="74HCT4051N" x="-2.54" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name="">
+<attribute name="_EXTERNAL_" value="_EXTERNAL_" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="4562D">
+<gates>
+<gate name="G$1" symbol="4562D" x="7.62" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name="">
+<attribute name="_EXTERNAL_" value="_EXTERNAL_" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="AD8801">
+<gates>
+<gate name="G$1" symbol="AD8801" x="-2.54" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name="">
+<attribute name="_EXTERNAL_" value="_EXTERNAL_" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="BA6286">
+<gates>
+<gate name="G$1" symbol="BA6286" x="0" y="-5.08"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name="">
+<attribute name="_EXTERNAL_" value="_EXTERNAL_" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="LM311P">
+<gates>
+<gate name="G$1" symbol="LM311P" x="7.62" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name="">
+<attribute name="_EXTERNAL_" value="_EXTERNAL_" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MM74HC02N">
+<gates>
+<gate name="G$1" symbol="MM74HC02N" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name="">
+<attribute name="_EXTERNAL_" value="_EXTERNAL_" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MOTORISED_FADER">
+<gates>
+<gate name="G$1" symbol="MOTORISED_FADER" x="2.54" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name="">
+<attribute name="_EXTERNAL_" value="_EXTERNAL_" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MC7808C">
+<gates>
+<gate name="G$1" symbol="MC7808C" x="0" y="-5.08"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name="">
+<attribute name="_EXTERNAL_" value="_EXTERNAL_" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+</drawing>
+</eagle>
