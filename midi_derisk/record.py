@@ -124,6 +124,6 @@ sleep(2)
 for i in stored_events:
     fader_move.append(i)
     midi_out.write(i)
-    sleep(0.001)
+    sleep(0.25)
 
 

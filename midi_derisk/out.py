@@ -42,9 +42,36 @@ def move_fader_to(pos, fader):
         midi_out.write(i)
 
 
-while True:
-    fader = int(input("Which fader?\n"))
-    position = int(input("Where to?\n"))
+def change_ch_to(enable, channel):
+    a = [[[[240, 66, 48, 104], 0]],
+         [[[67, 4, channel - 1, 0], 0]],
+         [[[14, 0, 0, 0], 14753]],
+         [[[int(not enable), 247, 0, 0], 0]]]
+    for i in a:
+        midi_out.write(i)
+
+
+def switch_program_page(page):
+    """
+    0: Timbre 1-8
+    1: Timre 9-16
+    7: Audio
+    4: Ext
+    5: KARMA
+    6: Tone
+    ?: EQ
+    :param page:
+    :return:
+    """
+    a = [[[[240, 66, 48, 104], 0]],
+         [[[67, 27, 0, 0], 0]],
+         [[[3, 0, 0, 0], 0]],
+         [[[int(page), 247, 0, 0], 0]]]
+    for i in a:
+        midi_out.write(i)
+
+
+def countdown():
     sleep(1)
     print(3)
     sleep(1)
@@ -53,4 +80,34 @@ while True:
     print(1)
     sleep(1)
     print("Now")
-    move_fader_to(position, fader)
+
+
+while True:
+    what = int(input("1: Fader,\n2: Channel en/disable\n3: Toggle timbre page\n\nWhat's it gonna be? "))
+    if what == 1:
+        fader = int(input("Which fader? "))
+        position = int(input("Where to? "))
+        countdown()
+        move_fader_to(position, fader)
+    if what == 2:
+        countdown()
+        for j in range(15, 17):
+            print("on")
+            change_ch_to(enable=True, channel=j)
+            sleep(1)
+            print("off")
+            change_ch_to(enable=False, channel=j)
+            sleep(1)
+            print("on")
+            change_ch_to(enable=True, channel=j)
+            sleep(1)
+            print("off")
+            change_ch_to(enable=False, channel=j)
+            sleep(1)
+    if what == 3:
+        countdown()
+        print("on")
+        for j in range(16):
+            print(j)
+            switch_program_page(j)
+            sleep(1)
