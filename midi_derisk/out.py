@@ -84,11 +84,12 @@ def countdown():
 
 countdown()
 while True:
-    for j in range(16):
+    for j in range(1, 17):
         fader = j
         position = 69
-        move_fader_to(position, fader)
-        sleep(1)
+        move_fader_to(position, j)
+        print(j)
+        sleep(.25)
 #
 # while True:
 #     what = int(input("1: Fader,\n2: Channel en/disable\n3: Toggle timbre page\n\nWhat's it gonna be? "))

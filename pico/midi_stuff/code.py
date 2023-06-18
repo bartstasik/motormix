@@ -7,7 +7,7 @@ import usb_midi
 from adafruit_midi.note_on import NoteOn
 from adafruit_midi.note_off import NoteOff
 
-from BartMIDI import BartMIDI
+from BartMIDI import BartMIDI, KronosMessage
 
 print(usb_midi.ports)
 midi = BartMIDI(
@@ -48,30 +48,48 @@ note_mapping = [
 #     # print("sending")
 #     # msg = midi.send(msg=b'\xf0B0hC\x04\x01\x00\x02\x00\x00\x00E\xf7')
 #     # time.sleep(1)
-#     msg, buffer, channel = midi.receive()
+#     msg = midi.receive()
 #     if msg is None:
 #         continue
-#     print(msg, buffer, channel)
+#     # print(msg, buffer, channel)
 #
-#     with open("/recorded_data.csv", "a+") as f:
-#         f.write(f"{buffer}\n")
+#     # with open("/recorded_data.csv", "a+") as f:
+#     #     f.write(f"{buffer}\n")
 
-    # midi.send(msg)
-    # print(msg)
-    # time.sleep(1)
-    # print(msg, msg.__str__, msg.status)
+# midi.send(msg)
+# print(msg)
+# time.sleep(1)
+# print(msg, msg.__str__, msg.status)
 
-with open("/recorded_data.csv", "r") as f:
-    lines = f.readlines()
+# with open("/recorded_data.csv", "r") as f:
+#     lines = f.readlines()
+#
+#     for i in lines:
+#         j = i.strip()
+#         while j[-1] == ",":
+#             j = j[:-1]
+#         buffer = eval(j)
+#         print(buffer)
+#         time.sleep(1)
 
-    while True:
-        for i in lines:
-            j = i.strip()
-            while j[-1] == ",":
-                j = j[:-1]
-            buffer = eval(j)
-            print(buffer)
-            midi.send(buffer)
-            time.sleep(0.025)
-        time.sleep(2)
+while True:
+    for i in range(16):
+        for j in range(128):
+            a = KronosMessage(fader=i, position=j)
+            packet = a.to_bytearray()
+            midi.send(packet)
+            time.sleep(.001)
 
+print("Channel change")
+a = KronosMessage(b'\xf0B0hC\x04\x08\x00\x0e\x00\x00\x00\x00\xf7')
+print(a)
+print("Fader change")
+a = KronosMessage(b'\xf0B0hC\x04\x08\x00\x02\x00\x00\x00E\xf7')
+print(a)
+print("Page change")
+a = KronosMessage(b'\xf0B0hC\x1b\x00\x00\x03\x00\x00\x00\x01\xf7')
+print(a)
+
+print("Generated fader change")
+a = KronosMessage(fader=8, position=69)
+print(a, a.to_bytearray(), type(a.to_bytearray()))
