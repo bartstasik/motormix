@@ -32,6 +32,19 @@ def _print_device_info():
 stored_events = []
 
 
+#                init
+# =======================================
+GRAND_PIANO = 0
+CHURCH_ORGAN = 19
+instrument = CHURCH_ORGAN
+pygame.init()
+pygame.midi.init()
+port = 4
+midi_out = pygame.midi.Output(port, 0)
+midi_out.set_instrument(instrument)
+print("using output_id :%s:" % port)
+
+
 def input_main(device_id=None):
     pg.init()
     pg.fastevent.init()
@@ -62,11 +75,15 @@ def input_main(device_id=None):
                 if e.type in [pg.KEYDOWN]:
                     going = False
                 if e.type in [pygame.midi.MIDIIN]:
-                    print(e)
+                    pass
 
             if i.poll():
                 midi_events = i.read(1)
+                if midi_events[0][0][0] == 248:
+                    continue
                 stored_events.append(midi_events)
+                midi_out.write(midi_events)
+                print(midi_events)
                 # convert them into pygame events.
                 midi_evs = pygame.midi.midis2events(midi_events, i.device_id)
 
@@ -83,20 +100,7 @@ def input_main(device_id=None):
     pygame.midi.quit()
 
 
-# print_device_info()
-input_main(1)
-
-#                init
-# =======================================
-GRAND_PIANO = 0
-CHURCH_ORGAN = 19
-instrument = CHURCH_ORGAN
-pygame.init()
-pygame.midi.init()
-port = 3
-midi_out = pygame.midi.Output(port, 0)
-midi_out.set_instrument(instrument)
-print("using output_id :%s:" % port)
+input_main(2)
 
 
 # =======================================
@@ -119,11 +123,11 @@ music = 1
 
 fader_move = []
 
-sleep(2)
-
-for i in stored_events:
-    fader_move.append(i)
-    midi_out.write(i)
-    sleep(0.25)
+# sleep(2)
+#
+# for i in stored_events:
+#     fader_move.append(i)
+#     midi_out.write(i)
+#     sleep(0.25)
 
 

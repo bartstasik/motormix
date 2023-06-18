@@ -10,7 +10,7 @@ CHURCH_ORGAN = 19
 instrument = CHURCH_ORGAN
 pygame.init()
 pygame.midi.init()
-port = 3
+port = 5
 midi_out = pygame.midi.Output(port, 0)
 midi_out.set_instrument(instrument)
 print("using output_id :%s:" % port)
@@ -82,32 +82,40 @@ def countdown():
     print("Now")
 
 
+countdown()
 while True:
-    what = int(input("1: Fader,\n2: Channel en/disable\n3: Toggle timbre page\n\nWhat's it gonna be? "))
-    if what == 1:
-        fader = int(input("Which fader? "))
-        position = int(input("Where to? "))
-        countdown()
+    for j in range(16):
+        fader = j
+        position = 69
         move_fader_to(position, fader)
-    if what == 2:
-        countdown()
-        for j in range(15, 17):
-            print("on")
-            change_ch_to(enable=True, channel=j)
-            sleep(1)
-            print("off")
-            change_ch_to(enable=False, channel=j)
-            sleep(1)
-            print("on")
-            change_ch_to(enable=True, channel=j)
-            sleep(1)
-            print("off")
-            change_ch_to(enable=False, channel=j)
-            sleep(1)
-    if what == 3:
-        countdown()
-        print("on")
-        for j in range(16):
-            print(j)
-            switch_program_page(j)
-            sleep(1)
+        sleep(1)
+#
+# while True:
+#     what = int(input("1: Fader,\n2: Channel en/disable\n3: Toggle timbre page\n\nWhat's it gonna be? "))
+#     if what == 1:
+#         fader = int(input("Which fader? "))
+#         position = int(input("Where to? "))
+#         countdown()
+#         move_fader_to(position, fader)
+#     if what == 2:
+#         countdown()
+#         for j in range(15, 17):
+#             print("on")
+#             change_ch_to(enable=True, channel=j)
+#             sleep(1)
+#             print("off")
+#             change_ch_to(enable=False, channel=j)
+#             sleep(1)
+#             print("on")
+#             change_ch_to(enable=True, channel=j)
+#             sleep(1)
+#             print("off")
+#             change_ch_to(enable=False, channel=j)
+#             sleep(1)
+#     if what == 3:
+#         countdown()
+#         print("on")
+#         for j in range(16):
+#             print(j)
+#             switch_program_page(j)
+#             sleep(1)
