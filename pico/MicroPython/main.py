@@ -248,8 +248,14 @@ def test_wave():
 
 def test_backnforth():
     while 1:
-        movetovalue(127, True)
+        movetovalue(63, False)
+        movetovalue(0, False)
+
+
+def test_with_testpot():
+    while 1:
         movetovalue(0, True)
 
 
-test_wave()
+if __name__ == "__main__":
+    test_with_testpot()
