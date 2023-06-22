@@ -1,4 +1,4 @@
 Adafruit CircuitPython 8.1.0 on 2023-05-22; Raspberry Pi Pico W with rp2040
 Board ID:raspberry_pi_pico_w
-UID:E660B44007987426
+UID:E661410403504332
 MAC:00:00:00:00:00:00
