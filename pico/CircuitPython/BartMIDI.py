@@ -4,6 +4,8 @@ from adafruit_midi.midi_message import MIDIUnknownEvent, MIDIBadEvent, channel_f
 
 import time
 
+from util import print_uart
+
 
 class BartMessage(adafruit_midi.MIDIMessage):
     # pylint: disable=too-many-locals,too-many-branches
@@ -99,7 +101,15 @@ class BartMIDI(adafruit_midi.MIDI):
 
         while True:
             i = self._midi_in.read(1)
+            # print_uart(i)
+            if i is None:
+                time.sleep(0.5)
+                break
+            if i == b'':
+                time.sleep(0.5)
+                break
             i = hex(int.from_bytes(i, 'big'))
+            # print(i)
 
             if len(packet) > 14:
                 packet = []
@@ -110,12 +120,51 @@ class BartMIDI(adafruit_midi.MIDI):
                 packet.append(i)
             if i == "0xf7" and len(packet) == 14 and synced:
                 return packet
+        if packet == []:
+            return None
+        # print("out of loop")
 
     def receive(self):
         packet = self.read_next_midi_packet()
-        print(packet, KronosMessage(packet))
-        input("next?")
+        try:
+            # print(KronosMessage(packet))
+            return KronosMessage(packet)
+        except:
+            # print("Error in MIDI")
+            return None
         # print(f"\n{packet} - {KronosMessage(packet)}")
+
+    # def receive(self):
+    #     """Read messages from MIDI port, store them in internal read buffer, then parse that data
+    #     and return the first MIDI message (event).
+    #     This maintains the blocking characteristics of the midi_in port.
+    #
+    #     :returns MIDIMessage object: Returns object or None for nothing.
+    #     """
+    #     ### could check _midi_in is an object OR correct object OR correct interface here?
+    #     # If the buffer here is not full then read as much as we can fit from
+    #     # the input port
+    #     if len(self._in_buf) < self._in_buf_size:
+    #         bytes_in = self._midi_in.read(self._in_buf_size - len(self._in_buf))
+    #         if bytes_in:
+    #             # if self._debug:
+    #             # print("Receiving: ", [hex(i) for i in bytes_in])
+    #             self._in_buf.extend(bytes_in)
+    #             del bytes_in
+    #
+    #     (msg, endplusone, skipped) = MIDIMessage.from_message_bytes(
+    #         self._in_buf, self._in_channel
+    #     )
+    #     if endplusone != 0:
+    #         # This is not particularly efficient as it's copying most of bytearray
+    #         # and deleting old one
+    #         self._in_buf = self._in_buf[endplusone:]
+    #
+    #     self._skipped_bytes += skipped
+    #
+    #     # msg could still be None at this point, e.g. in middle of monster SysEx
+    #     print(msg)
+    #     return msg
 
     def send(self, msg, channel=None):
         """Sends a MIDI message.
@@ -234,7 +283,7 @@ buffer = b'\xf0B0hC\x04\x08\x00\x0e\x00\x00\x00\x00\xf7'  # ch_change
 
 class KronosMessage:
     def __init__(self, hexarray=None, fader=None, position=None):
-        if hexarray is None:
+        if hexarray is None and fader is not None and position is not None:
             self.FUNCTION = 0x43
             self.TYP = 0x4
             self.SOC = fader
@@ -247,7 +296,6 @@ class KronosMessage:
             return
 
         # Assume buffer starts and ends with F0...F7
-        print(hexarray)
         if hexarray[:4] != ['0xf0', '0x42', '0x30', '0x68'] and len(hexarray) != 14:
             raise Exception("Not a Kronos SysEx message!")
 
