@@ -28,6 +28,7 @@ def _print_device_info():
             % (i, interf, name, opened, in_out)
         )
 
+print_device_info()
 
 stored_events = []
 
@@ -39,7 +40,7 @@ CHURCH_ORGAN = 19
 instrument = CHURCH_ORGAN
 pygame.init()
 pygame.midi.init()
-port = 4
+port = 3
 midi_out = pygame.midi.Output(port, 0)
 midi_out.set_instrument(instrument)
 print("using output_id :%s:" % port)
@@ -100,7 +101,7 @@ def input_main(device_id=None):
     pygame.midi.quit()
 
 
-input_main(2)
+input_main(0)
 
 
 # =======================================
